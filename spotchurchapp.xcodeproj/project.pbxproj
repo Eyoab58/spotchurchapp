@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		417766CF2D88A18100933571 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417766CE2D88A18100933571 /* HomeView.swift */; };
+		417766D12D88A20D00933571 /* ViewA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417766D02D88A20D00933571 /* ViewA.swift */; };
 		417AA5FA2D889F0000ABB99F /* spotchurchappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417AA5F92D889F0000ABB99F /* spotchurchappApp.swift */; };
 		417AA5FC2D889F0000ABB99F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417AA5FB2D889F0000ABB99F /* ContentView.swift */; };
 		417AA5FE2D889F0300ABB99F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 417AA5FD2D889F0300ABB99F /* Assets.xcassets */; };
@@ -14,6 +16,7 @@
 		417AA60C2D889F0400ABB99F /* spotchurchappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417AA60B2D889F0400ABB99F /* spotchurchappTests.swift */; };
 		417AA6162D889F0400ABB99F /* spotchurchappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417AA6152D889F0400ABB99F /* spotchurchappUITests.swift */; };
 		417AA6182D889F0400ABB99F /* spotchurchappUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417AA6172D889F0400ABB99F /* spotchurchappUITestsLaunchTests.swift */; };
+		417C863E2D88C67E00072F67 /* ResourcesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417C863D2D88C67E00072F67 /* ResourcesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		417766CE2D88A18100933571 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		417766D02D88A20D00933571 /* ViewA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewA.swift; sourceTree = "<group>"; };
 		417AA5F62D889F0000ABB99F /* spotchurchapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spotchurchapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		417AA5F92D889F0000ABB99F /* spotchurchappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spotchurchappApp.swift; sourceTree = "<group>"; };
 		417AA5FB2D889F0000ABB99F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +50,7 @@
 		417AA6112D889F0400ABB99F /* spotchurchappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = spotchurchappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		417AA6152D889F0400ABB99F /* spotchurchappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spotchurchappUITests.swift; sourceTree = "<group>"; };
 		417AA6172D889F0400ABB99F /* spotchurchappUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spotchurchappUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		417C863D2D88C67E00072F67 /* ResourcesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		417766CD2D88A12E00933571 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				417766CE2D88A18100933571 /* HomeView.swift */,
+				417766D02D88A20D00933571 /* ViewA.swift */,
+				417C863D2D88C67E00072F67 /* ResourcesView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		417AA5ED2D889F0000ABB99F = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +111,7 @@
 		417AA5F82D889F0000ABB99F /* spotchurchapp */ = {
 			isa = PBXGroup;
 			children = (
+				417766CD2D88A12E00933571 /* Views */,
 				417AA5F92D889F0000ABB99F /* spotchurchappApp.swift */,
 				417AA5FB2D889F0000ABB99F /* ContentView.swift */,
 				417AA5FD2D889F0300ABB99F /* Assets.xcassets */,
@@ -259,7 +276,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				417C863E2D88C67E00072F67 /* ResourcesView.swift in Sources */,
+				417766CF2D88A18100933571 /* HomeView.swift in Sources */,
 				417AA5FC2D889F0000ABB99F /* ContentView.swift in Sources */,
+				417766D12D88A20D00933571 /* ViewA.swift in Sources */,
 				417AA5FA2D889F0000ABB99F /* spotchurchappApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
