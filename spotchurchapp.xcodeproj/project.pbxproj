@@ -1,0 +1,609 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		417AA5FA2D889F0000ABB99F /* spotchurchappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417AA5F92D889F0000ABB99F /* spotchurchappApp.swift */; };
+		417AA5FC2D889F0000ABB99F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417AA5FB2D889F0000ABB99F /* ContentView.swift */; };
+		417AA5FE2D889F0300ABB99F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 417AA5FD2D889F0300ABB99F /* Assets.xcassets */; };
+		417AA6022D889F0300ABB99F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 417AA6012D889F0300ABB99F /* Preview Assets.xcassets */; };
+		417AA60C2D889F0400ABB99F /* spotchurchappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417AA60B2D889F0400ABB99F /* spotchurchappTests.swift */; };
+		417AA6162D889F0400ABB99F /* spotchurchappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417AA6152D889F0400ABB99F /* spotchurchappUITests.swift */; };
+		417AA6182D889F0400ABB99F /* spotchurchappUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417AA6172D889F0400ABB99F /* spotchurchappUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		417AA6082D889F0400ABB99F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 417AA5EE2D889F0000ABB99F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 417AA5F52D889F0000ABB99F;
+			remoteInfo = spotchurchapp;
+		};
+		417AA6122D889F0400ABB99F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 417AA5EE2D889F0000ABB99F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 417AA5F52D889F0000ABB99F;
+			remoteInfo = spotchurchapp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		417AA5F62D889F0000ABB99F /* spotchurchapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spotchurchapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		417AA5F92D889F0000ABB99F /* spotchurchappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spotchurchappApp.swift; sourceTree = "<group>"; };
+		417AA5FB2D889F0000ABB99F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		417AA5FD2D889F0300ABB99F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		417AA5FF2D889F0300ABB99F /* spotchurchapp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = spotchurchapp.entitlements; sourceTree = "<group>"; };
+		417AA6012D889F0300ABB99F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		417AA6072D889F0400ABB99F /* spotchurchappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = spotchurchappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		417AA60B2D889F0400ABB99F /* spotchurchappTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spotchurchappTests.swift; sourceTree = "<group>"; };
+		417AA6112D889F0400ABB99F /* spotchurchappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = spotchurchappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		417AA6152D889F0400ABB99F /* spotchurchappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spotchurchappUITests.swift; sourceTree = "<group>"; };
+		417AA6172D889F0400ABB99F /* spotchurchappUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spotchurchappUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		417AA5F32D889F0000ABB99F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		417AA6042D889F0400ABB99F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		417AA60E2D889F0400ABB99F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		417AA5ED2D889F0000ABB99F = {
+			isa = PBXGroup;
+			children = (
+				417AA5F82D889F0000ABB99F /* spotchurchapp */,
+				417AA60A2D889F0400ABB99F /* spotchurchappTests */,
+				417AA6142D889F0400ABB99F /* spotchurchappUITests */,
+				417AA5F72D889F0000ABB99F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		417AA5F72D889F0000ABB99F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				417AA5F62D889F0000ABB99F /* spotchurchapp.app */,
+				417AA6072D889F0400ABB99F /* spotchurchappTests.xctest */,
+				417AA6112D889F0400ABB99F /* spotchurchappUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		417AA5F82D889F0000ABB99F /* spotchurchapp */ = {
+			isa = PBXGroup;
+			children = (
+				417AA5F92D889F0000ABB99F /* spotchurchappApp.swift */,
+				417AA5FB2D889F0000ABB99F /* ContentView.swift */,
+				417AA5FD2D889F0300ABB99F /* Assets.xcassets */,
+				417AA5FF2D889F0300ABB99F /* spotchurchapp.entitlements */,
+				417AA6002D889F0300ABB99F /* Preview Content */,
+			);
+			path = spotchurchapp;
+			sourceTree = "<group>";
+		};
+		417AA6002D889F0300ABB99F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				417AA6012D889F0300ABB99F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		417AA60A2D889F0400ABB99F /* spotchurchappTests */ = {
+			isa = PBXGroup;
+			children = (
+				417AA60B2D889F0400ABB99F /* spotchurchappTests.swift */,
+			);
+			path = spotchurchappTests;
+			sourceTree = "<group>";
+		};
+		417AA6142D889F0400ABB99F /* spotchurchappUITests */ = {
+			isa = PBXGroup;
+			children = (
+				417AA6152D889F0400ABB99F /* spotchurchappUITests.swift */,
+				417AA6172D889F0400ABB99F /* spotchurchappUITestsLaunchTests.swift */,
+			);
+			path = spotchurchappUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		417AA5F52D889F0000ABB99F /* spotchurchapp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 417AA61B2D889F0400ABB99F /* Build configuration list for PBXNativeTarget "spotchurchapp" */;
+			buildPhases = (
+				417AA5F22D889F0000ABB99F /* Sources */,
+				417AA5F32D889F0000ABB99F /* Frameworks */,
+				417AA5F42D889F0000ABB99F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = spotchurchapp;
+			productName = spotchurchapp;
+			productReference = 417AA5F62D889F0000ABB99F /* spotchurchapp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		417AA6062D889F0400ABB99F /* spotchurchappTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 417AA61E2D889F0400ABB99F /* Build configuration list for PBXNativeTarget "spotchurchappTests" */;
+			buildPhases = (
+				417AA6032D889F0400ABB99F /* Sources */,
+				417AA6042D889F0400ABB99F /* Frameworks */,
+				417AA6052D889F0400ABB99F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				417AA6092D889F0400ABB99F /* PBXTargetDependency */,
+			);
+			name = spotchurchappTests;
+			productName = spotchurchappTests;
+			productReference = 417AA6072D889F0400ABB99F /* spotchurchappTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		417AA6102D889F0400ABB99F /* spotchurchappUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 417AA6212D889F0400ABB99F /* Build configuration list for PBXNativeTarget "spotchurchappUITests" */;
+			buildPhases = (
+				417AA60D2D889F0400ABB99F /* Sources */,
+				417AA60E2D889F0400ABB99F /* Frameworks */,
+				417AA60F2D889F0400ABB99F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				417AA6132D889F0400ABB99F /* PBXTargetDependency */,
+			);
+			name = spotchurchappUITests;
+			productName = spotchurchappUITests;
+			productReference = 417AA6112D889F0400ABB99F /* spotchurchappUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		417AA5EE2D889F0000ABB99F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					417AA5F52D889F0000ABB99F = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					417AA6062D889F0400ABB99F = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 417AA5F52D889F0000ABB99F;
+					};
+					417AA6102D889F0400ABB99F = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 417AA5F52D889F0000ABB99F;
+					};
+				};
+			};
+			buildConfigurationList = 417AA5F12D889F0000ABB99F /* Build configuration list for PBXProject "spotchurchapp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 417AA5ED2D889F0000ABB99F;
+			productRefGroup = 417AA5F72D889F0000ABB99F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				417AA5F52D889F0000ABB99F /* spotchurchapp */,
+				417AA6062D889F0400ABB99F /* spotchurchappTests */,
+				417AA6102D889F0400ABB99F /* spotchurchappUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		417AA5F42D889F0000ABB99F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				417AA6022D889F0300ABB99F /* Preview Assets.xcassets in Resources */,
+				417AA5FE2D889F0300ABB99F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		417AA6052D889F0400ABB99F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		417AA60F2D889F0400ABB99F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		417AA5F22D889F0000ABB99F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				417AA5FC2D889F0000ABB99F /* ContentView.swift in Sources */,
+				417AA5FA2D889F0000ABB99F /* spotchurchappApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		417AA6032D889F0400ABB99F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				417AA60C2D889F0400ABB99F /* spotchurchappTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		417AA60D2D889F0400ABB99F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				417AA6162D889F0400ABB99F /* spotchurchappUITests.swift in Sources */,
+				417AA6182D889F0400ABB99F /* spotchurchappUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		417AA6092D889F0400ABB99F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 417AA5F52D889F0000ABB99F /* spotchurchapp */;
+			targetProxy = 417AA6082D889F0400ABB99F /* PBXContainerItemProxy */;
+		};
+		417AA6132D889F0400ABB99F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 417AA5F52D889F0000ABB99F /* spotchurchapp */;
+			targetProxy = 417AA6122D889F0400ABB99F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		417AA6192D889F0400ABB99F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		417AA61A2D889F0400ABB99F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		417AA61C2D889F0400ABB99F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = spotchurchapp/spotchurchapp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"spotchurchapp/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.7;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Church.spotchurchapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		417AA61D2D889F0400ABB99F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = spotchurchapp/spotchurchapp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"spotchurchapp/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.7;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Church.spotchurchapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		417AA61F2D889F0400ABB99F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 12.7;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Church.spotchurchappTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/spotchurchapp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/spotchurchapp";
+			};
+			name = Debug;
+		};
+		417AA6202D889F0400ABB99F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 12.7;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Church.spotchurchappTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/spotchurchapp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/spotchurchapp";
+			};
+			name = Release;
+		};
+		417AA6222D889F0400ABB99F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 12.7;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Church.spotchurchappUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = spotchurchapp;
+			};
+			name = Debug;
+		};
+		417AA6232D889F0400ABB99F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 12.7;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Church.spotchurchappUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = spotchurchapp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		417AA5F12D889F0000ABB99F /* Build configuration list for PBXProject "spotchurchapp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				417AA6192D889F0400ABB99F /* Debug */,
+				417AA61A2D889F0400ABB99F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		417AA61B2D889F0400ABB99F /* Build configuration list for PBXNativeTarget "spotchurchapp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				417AA61C2D889F0400ABB99F /* Debug */,
+				417AA61D2D889F0400ABB99F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		417AA61E2D889F0400ABB99F /* Build configuration list for PBXNativeTarget "spotchurchappTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				417AA61F2D889F0400ABB99F /* Debug */,
+				417AA6202D889F0400ABB99F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		417AA6212D889F0400ABB99F /* Build configuration list for PBXNativeTarget "spotchurchappUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				417AA6222D889F0400ABB99F /* Debug */,
+				417AA6232D889F0400ABB99F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 417AA5EE2D889F0000ABB99F /* Project object */;
+}
