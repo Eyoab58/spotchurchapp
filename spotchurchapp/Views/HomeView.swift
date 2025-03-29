@@ -8,32 +8,36 @@
 import SwiftUI
 import WebKit
 
-struct YoutubePlayerView: UIViewRepresentable{
-    
-    func updateUIView(_ uiView: WKWebView, context: Context) {
-        guard let url = URL(string: "https://www.youtube.com/embed/\(self.videoId)?playsinline=1") else{
-            return
-        }
-        
-        let request = URLRequest(url:url)
-        uiView.load(request)
-    }
-    
-    
+struct YoutubePlayerView: UIViewRepresentable {
     let videoId: String
-    
+
     func makeUIView(context: Context) -> WKWebView {
         let webView = WKWebView()
         webView.configuration.allowsInlineMediaPlayback = true
         webView.configuration.mediaTypesRequiringUserActionForPlayback = []
         return webView
+    }
 
+    func updateUIView(_ uiView: WKWebView, context: Context) {
+        let embedURLString = "https://www.youtube.com/embed/\(videoId)?playsinline=1"
+        guard let url = URL(string: embedURLString) else {
+            print("Invalid YouTube URL")
+            return
+        }
+
+        let request = URLRequest(url: url)
+        uiView.load(request)
     }
 }
 
+import SwiftUI
+import WebKit
+
 struct HomeView: View {
+    @State private var showLogin = false
+
     var body: some View {
-        TabView {
+        NavigationView {
             ZStack {
                 Color(red: 0xDE / 255.0, green: 0xC3 / 255.0, blue: 0x8E / 255.0)
                     .ignoresSafeArea()
@@ -45,15 +49,28 @@ struct HomeView: View {
                         .frame(width: 150, height: 110)
                         .padding(.top, 10)
                     
-                    // FEATURED VIDEO CARD
                     FeaturedVideoCard()
-                    
+
                     Spacer()
                 }
+            }
+            .navigationTitle("Home")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarItems(trailing:
+                Button(action: {
+                    showLogin = true
+                }) {
+                    Image(systemName: "person.crop.circle.fill.badge.plus")
+                        .font(.title2)
+                }
+            )
+            .sheet(isPresented: $showLogin) {
+                AuthView() // 👈 Your login/register screen
             }
         }
     }
 }
+
 
 // FEATURED VIDEO CARD COMPONENT
 struct FeaturedVideoCard: View {

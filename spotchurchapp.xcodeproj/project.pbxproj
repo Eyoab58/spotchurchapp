@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B4D8B32720634A3ABB62924 /* Pods_spotchurchapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3456CC40A1499DA78169F87F /* Pods_spotchurchapp.framework */; };
+		4151C53B2D9878A800B827B6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 419205E62D8DAF1700EA6D8F /* GoogleService-Info.plist */; };
 		417766CF2D88A18100933571 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417766CE2D88A18100933571 /* HomeView.swift */; };
 		417766D12D88A20D00933571 /* ViewA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417766D02D88A20D00933571 /* ViewA.swift */; };
+		417808902D95F3EA0004B28F /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4178088F2D95F3EA0004B28F /* AuthViewModel.swift */; };
+		417808952D95F50E0004B28F /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417808942D95F50E0004B28F /* AuthView.swift */; };
 		417AA5FA2D889F0000ABB99F /* spotchurchappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417AA5F92D889F0000ABB99F /* spotchurchappApp.swift */; };
 		417AA5FC2D889F0000ABB99F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417AA5FB2D889F0000ABB99F /* ContentView.swift */; };
 		417AA5FE2D889F0300ABB99F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 417AA5FD2D889F0300ABB99F /* Assets.xcassets */; };
@@ -17,6 +21,9 @@
 		417AA6162D889F0400ABB99F /* spotchurchappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417AA6152D889F0400ABB99F /* spotchurchappUITests.swift */; };
 		417AA6182D889F0400ABB99F /* spotchurchappUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417AA6172D889F0400ABB99F /* spotchurchappUITestsLaunchTests.swift */; };
 		417C863E2D88C67E00072F67 /* ResourcesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417C863D2D88C67E00072F67 /* ResourcesView.swift */; };
+		419205E72D8DAF1800EA6D8F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 419205E62D8DAF1700EA6D8F /* GoogleService-Info.plist */; };
+		E0CA843731D7DBD896444496 /* Pods_spotchurchappTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C5A481846496DC6682BC20D /* Pods_spotchurchappTests.framework */; };
+		E88A905E20EF54658E96161A /* Pods_spotchurchappUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4102B03FD0644523B0CE1C57 /* Pods_spotchurchappUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +44,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C5A481846496DC6682BC20D /* Pods_spotchurchappTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_spotchurchappTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3456CC40A1499DA78169F87F /* Pods_spotchurchapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_spotchurchapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4102B03FD0644523B0CE1C57 /* Pods_spotchurchappUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_spotchurchappUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		416A289B211C9757107D3C59 /* Pods-spotchurchappTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spotchurchappTests.release.xcconfig"; path = "Target Support Files/Pods-spotchurchappTests/Pods-spotchurchappTests.release.xcconfig"; sourceTree = "<group>"; };
 		417766CE2D88A18100933571 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		417766D02D88A20D00933571 /* ViewA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewA.swift; sourceTree = "<group>"; };
+		4178088F2D95F3EA0004B28F /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		417808942D95F50E0004B28F /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		417AA5F62D889F0000ABB99F /* spotchurchapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spotchurchapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		417AA5F92D889F0000ABB99F /* spotchurchappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spotchurchappApp.swift; sourceTree = "<group>"; };
 		417AA5FB2D889F0000ABB99F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,6 +64,12 @@
 		417AA6152D889F0400ABB99F /* spotchurchappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spotchurchappUITests.swift; sourceTree = "<group>"; };
 		417AA6172D889F0400ABB99F /* spotchurchappUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spotchurchappUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		417C863D2D88C67E00072F67 /* ResourcesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesView.swift; sourceTree = "<group>"; };
+		419205E62D8DAF1700EA6D8F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		523D29982091819CF78821F0 /* Pods-spotchurchappTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spotchurchappTests.debug.xcconfig"; path = "Target Support Files/Pods-spotchurchappTests/Pods-spotchurchappTests.debug.xcconfig"; sourceTree = "<group>"; };
+		76DFD0E0FFB9E47A9EA82B59 /* Pods-spotchurchapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spotchurchapp.release.xcconfig"; path = "Target Support Files/Pods-spotchurchapp/Pods-spotchurchapp.release.xcconfig"; sourceTree = "<group>"; };
+		8E664C63BE03473CF3713B99 /* Pods-spotchurchapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spotchurchapp.debug.xcconfig"; path = "Target Support Files/Pods-spotchurchapp/Pods-spotchurchapp.debug.xcconfig"; sourceTree = "<group>"; };
+		9D19DFB4256D850E88C1D89E /* Pods-spotchurchappUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spotchurchappUITests.release.xcconfig"; path = "Target Support Files/Pods-spotchurchappUITests/Pods-spotchurchappUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FDB1EF6CB4B5C36E81A15C2F /* Pods-spotchurchappUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spotchurchappUITests.debug.xcconfig"; path = "Target Support Files/Pods-spotchurchappUITests/Pods-spotchurchappUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B4D8B32720634A3ABB62924 /* Pods_spotchurchapp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0CA843731D7DBD896444496 /* Pods_spotchurchappTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E88A905E20EF54658E96161A /* Pods_spotchurchappUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,11 +103,22 @@
 		417766CD2D88A12E00933571 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				417AA5FB2D889F0000ABB99F /* ContentView.swift */,
 				417766CE2D88A18100933571 /* HomeView.swift */,
 				417766D02D88A20D00933571 /* ViewA.swift */,
 				417C863D2D88C67E00072F67 /* ResourcesView.swift */,
+				417808942D95F50E0004B28F /* AuthView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		417808912D95F44E0004B28F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				417AA5F92D889F0000ABB99F /* spotchurchappApp.swift */,
+				4178088F2D95F3EA0004B28F /* AuthViewModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		417AA5ED2D889F0000ABB99F = {
@@ -95,6 +128,8 @@
 				417AA60A2D889F0400ABB99F /* spotchurchappTests */,
 				417AA6142D889F0400ABB99F /* spotchurchappUITests */,
 				417AA5F72D889F0000ABB99F /* Products */,
+				BC90702D921B8B7C2E67903F /* Pods */,
+				C020D430DAC82163A8FF05AE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,9 +146,9 @@
 		417AA5F82D889F0000ABB99F /* spotchurchapp */ = {
 			isa = PBXGroup;
 			children = (
+				419205E62D8DAF1700EA6D8F /* GoogleService-Info.plist */,
+				417808912D95F44E0004B28F /* Models */,
 				417766CD2D88A12E00933571 /* Views */,
-				417AA5F92D889F0000ABB99F /* spotchurchappApp.swift */,
-				417AA5FB2D889F0000ABB99F /* ContentView.swift */,
 				417AA5FD2D889F0300ABB99F /* Assets.xcassets */,
 				417AA5FF2D889F0300ABB99F /* spotchurchapp.entitlements */,
 				417AA6002D889F0300ABB99F /* Preview Content */,
@@ -146,6 +181,29 @@
 			path = spotchurchappUITests;
 			sourceTree = "<group>";
 		};
+		BC90702D921B8B7C2E67903F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8E664C63BE03473CF3713B99 /* Pods-spotchurchapp.debug.xcconfig */,
+				76DFD0E0FFB9E47A9EA82B59 /* Pods-spotchurchapp.release.xcconfig */,
+				523D29982091819CF78821F0 /* Pods-spotchurchappTests.debug.xcconfig */,
+				416A289B211C9757107D3C59 /* Pods-spotchurchappTests.release.xcconfig */,
+				FDB1EF6CB4B5C36E81A15C2F /* Pods-spotchurchappUITests.debug.xcconfig */,
+				9D19DFB4256D850E88C1D89E /* Pods-spotchurchappUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C020D430DAC82163A8FF05AE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3456CC40A1499DA78169F87F /* Pods_spotchurchapp.framework */,
+				1C5A481846496DC6682BC20D /* Pods_spotchurchappTests.framework */,
+				4102B03FD0644523B0CE1C57 /* Pods_spotchurchappUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -153,15 +211,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 417AA61B2D889F0400ABB99F /* Build configuration list for PBXNativeTarget "spotchurchapp" */;
 			buildPhases = (
+				AE46D0D377BB0C63B450152F /* [CP] Check Pods Manifest.lock */,
 				417AA5F22D889F0000ABB99F /* Sources */,
 				417AA5F32D889F0000ABB99F /* Frameworks */,
 				417AA5F42D889F0000ABB99F /* Resources */,
+				72CE4897F0DAD39039F89D86 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = spotchurchapp;
+			packageProductDependencies = (
+			);
 			productName = spotchurchapp;
 			productReference = 417AA5F62D889F0000ABB99F /* spotchurchapp.app */;
 			productType = "com.apple.product-type.application";
@@ -170,6 +232,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 417AA61E2D889F0400ABB99F /* Build configuration list for PBXNativeTarget "spotchurchappTests" */;
 			buildPhases = (
+				3E072DD3F3204CF5A2FE9656 /* [CP] Check Pods Manifest.lock */,
 				417AA6032D889F0400ABB99F /* Sources */,
 				417AA6042D889F0400ABB99F /* Frameworks */,
 				417AA6052D889F0400ABB99F /* Resources */,
@@ -188,6 +251,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 417AA6212D889F0400ABB99F /* Build configuration list for PBXNativeTarget "spotchurchappUITests" */;
 			buildPhases = (
+				AB7FC6C7AD1086E80E905914 /* [CP] Check Pods Manifest.lock */,
 				417AA60D2D889F0400ABB99F /* Sources */,
 				417AA60E2D889F0400ABB99F /* Frameworks */,
 				417AA60F2D889F0400ABB99F /* Resources */,
@@ -234,6 +298,8 @@
 				Base,
 			);
 			mainGroup = 417AA5ED2D889F0000ABB99F;
+			packageReferences = (
+			);
 			productRefGroup = 417AA5F72D889F0000ABB99F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -252,6 +318,7 @@
 			files = (
 				417AA6022D889F0300ABB99F /* Preview Assets.xcassets in Resources */,
 				417AA5FE2D889F0300ABB99F /* Assets.xcassets in Resources */,
+				4151C53B2D9878A800B827B6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,10 +333,97 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				419205E72D8DAF1800EA6D8F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3E072DD3F3204CF5A2FE9656 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-spotchurchappTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		72CE4897F0DAD39039F89D86 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-spotchurchapp/Pods-spotchurchapp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-spotchurchapp/Pods-spotchurchapp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-spotchurchapp/Pods-spotchurchapp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB7FC6C7AD1086E80E905914 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-spotchurchappUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE46D0D377BB0C63B450152F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-spotchurchapp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		417AA5F22D889F0000ABB99F /* Sources */ = {
@@ -277,7 +431,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				417C863E2D88C67E00072F67 /* ResourcesView.swift in Sources */,
+				417808952D95F50E0004B28F /* AuthView.swift in Sources */,
 				417766CF2D88A18100933571 /* HomeView.swift in Sources */,
+				417808902D95F3EA0004B28F /* AuthViewModel.swift in Sources */,
 				417AA5FC2D889F0000ABB99F /* ContentView.swift in Sources */,
 				417766D12D88A20D00933571 /* ViewA.swift in Sources */,
 				417AA5FA2D889F0000ABB99F /* spotchurchappApp.swift in Sources */,
@@ -428,6 +584,7 @@
 		};
 		417AA61C2D889F0400ABB99F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E664C63BE03473CF3713B99 /* Pods-spotchurchapp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -447,7 +604,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.7;
@@ -464,6 +621,7 @@
 		};
 		417AA61D2D889F0400ABB99F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76DFD0E0FFB9E47A9EA82B59 /* Pods-spotchurchapp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -483,7 +641,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.7;
@@ -500,6 +658,7 @@
 		};
 		417AA61F2D889F0400ABB99F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 523D29982091819CF78821F0 /* Pods-spotchurchappTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -522,6 +681,7 @@
 		};
 		417AA6202D889F0400ABB99F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 416A289B211C9757107D3C59 /* Pods-spotchurchappTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -544,6 +704,7 @@
 		};
 		417AA6222D889F0400ABB99F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDB1EF6CB4B5C36E81A15C2F /* Pods-spotchurchappUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -565,6 +726,7 @@
 		};
 		417AA6232D889F0400ABB99F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D19DFB4256D850E88C1D89E /* Pods-spotchurchappUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
