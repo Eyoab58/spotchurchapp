@@ -7,6 +7,8 @@
 
 import SwiftUI
 import WebKit
+import FirebaseAuth
+
 
 struct YoutubePlayerView: UIViewRepresentable {
     let videoId: String
@@ -30,47 +32,58 @@ struct YoutubePlayerView: UIViewRepresentable {
     }
 }
 
-import SwiftUI
-import WebKit
-
 struct HomeView: View {
-    @State private var showLogin = false
+    @ObservedObject var auth: AuthViewModel
+    @State private var navigate = false
 
     var body: some View {
         NavigationView {
             ZStack {
                 Color(red: 0xDE / 255.0, green: 0xC3 / 255.0, blue: 0x8E / 255.0)
                     .ignoresSafeArea()
-                
+
                 VStack {
                     Image("SpotLogo")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 150, height: 110)
                         .padding(.top, 10)
-                    
-                    FeaturedVideoCard()
 
+                    FeaturedVideoCard()
                     Spacer()
+
+                    // 🔁 Dynamic NavigationLink
+                    NavigationLink(destination: destinationView(), isActive: $navigate) {
+                        EmptyView()
+                    }
                 }
             }
             .navigationTitle("Home")
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarItems(trailing:
                 Button(action: {
-                    showLogin = true
+                    navigate = true
                 }) {
-                    Image(systemName: "person.crop.circle.fill.badge.plus")
+                    Image(systemName: auth.user != nil ? "person.crop.circle" : "person.crop.circle.fill.badge.plus")
                         .font(.title2)
                 }
             )
-            .sheet(isPresented: $showLogin) {
-                AuthView() // 👈 Your login/register screen
+            .onAppear {
+                // Refresh auth state on view appear
+                auth.user = Auth.auth().currentUser
             }
         }
     }
-}
 
+    @ViewBuilder
+    private func destinationView() -> some View {
+        if auth.user != nil {
+            AccountView(auth: auth)
+        } else {
+            AuthView(auth: auth)
+        }
+    }
+}
 
 // FEATURED VIDEO CARD COMPONENT
 struct FeaturedVideoCard: View {
@@ -147,6 +160,6 @@ struct FeaturedVideoCard: View {
 // PREVIEWS
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(auth: AuthViewModel())
     }
 }

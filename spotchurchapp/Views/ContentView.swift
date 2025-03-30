@@ -11,10 +11,10 @@ import SwiftUI
 
 
 struct ContentView: View {
+    
     var body: some View {
         TabView{
-            
-            HomeView()
+            HomeView(auth: AuthViewModel())
                 .tabItem() {
                     Image(systemName: "house.fill")
                     Text("Contacts")
@@ -26,7 +26,8 @@ struct ContentView: View {
                     Text("Calls")
                 }
             
-            ResourcesView()
+        
+            ConfessionView()
                 .tabItem() {
                     Image(systemName: "doc.fill")
                     Text("Confession")

@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct AuthView: View {
-    @StateObject var auth = AuthViewModel()
+    @ObservedObject  var auth = AuthViewModel()
     @State private var email = ""
     @State private var password = ""
     @State private var firstName = ""
     @State private var lastName = ""
     @State private var isRegistering = false
     @State private var errorMessage: String?
+    
+    
 
     var body: some View {
             VStack(spacing: 20) {
