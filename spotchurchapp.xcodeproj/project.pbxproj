@@ -20,8 +20,9 @@
 		417AA60C2D889F0400ABB99F /* spotchurchappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417AA60B2D889F0400ABB99F /* spotchurchappTests.swift */; };
 		417AA6162D889F0400ABB99F /* spotchurchappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417AA6152D889F0400ABB99F /* spotchurchappUITests.swift */; };
 		417AA6182D889F0400ABB99F /* spotchurchappUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417AA6172D889F0400ABB99F /* spotchurchappUITestsLaunchTests.swift */; };
-		417C863E2D88C67E00072F67 /* ResourcesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417C863D2D88C67E00072F67 /* ResourcesView.swift */; };
+		417C863E2D88C67E00072F67 /* ConfessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417C863D2D88C67E00072F67 /* ConfessionView.swift */; };
 		419205E72D8DAF1800EA6D8F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 419205E62D8DAF1700EA6D8F /* GoogleService-Info.plist */; };
+		41A1B01A2D98B506005A9A78 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A1B0192D98B506005A9A78 /* AccountView.swift */; };
 		E0CA843731D7DBD896444496 /* Pods_spotchurchappTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C5A481846496DC6682BC20D /* Pods_spotchurchappTests.framework */; };
 		E88A905E20EF54658E96161A /* Pods_spotchurchappUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4102B03FD0644523B0CE1C57 /* Pods_spotchurchappUITests.framework */; };
 /* End PBXBuildFile section */
@@ -63,8 +64,9 @@
 		417AA6112D889F0400ABB99F /* spotchurchappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = spotchurchappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		417AA6152D889F0400ABB99F /* spotchurchappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spotchurchappUITests.swift; sourceTree = "<group>"; };
 		417AA6172D889F0400ABB99F /* spotchurchappUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spotchurchappUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		417C863D2D88C67E00072F67 /* ResourcesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesView.swift; sourceTree = "<group>"; };
+		417C863D2D88C67E00072F67 /* ConfessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfessionView.swift; sourceTree = "<group>"; };
 		419205E62D8DAF1700EA6D8F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		41A1B0192D98B506005A9A78 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		523D29982091819CF78821F0 /* Pods-spotchurchappTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spotchurchappTests.debug.xcconfig"; path = "Target Support Files/Pods-spotchurchappTests/Pods-spotchurchappTests.debug.xcconfig"; sourceTree = "<group>"; };
 		76DFD0E0FFB9E47A9EA82B59 /* Pods-spotchurchapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spotchurchapp.release.xcconfig"; path = "Target Support Files/Pods-spotchurchapp/Pods-spotchurchapp.release.xcconfig"; sourceTree = "<group>"; };
 		8E664C63BE03473CF3713B99 /* Pods-spotchurchapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spotchurchapp.debug.xcconfig"; path = "Target Support Files/Pods-spotchurchapp/Pods-spotchurchapp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -106,8 +108,9 @@
 				417AA5FB2D889F0000ABB99F /* ContentView.swift */,
 				417766CE2D88A18100933571 /* HomeView.swift */,
 				417766D02D88A20D00933571 /* ViewA.swift */,
-				417C863D2D88C67E00072F67 /* ResourcesView.swift */,
+				417C863D2D88C67E00072F67 /* ConfessionView.swift */,
 				417808942D95F50E0004B28F /* AuthView.swift */,
+				41A1B0192D98B506005A9A78 /* AccountView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -430,10 +433,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				417C863E2D88C67E00072F67 /* ResourcesView.swift in Sources */,
+				417C863E2D88C67E00072F67 /* ConfessionView.swift in Sources */,
 				417808952D95F50E0004B28F /* AuthView.swift in Sources */,
 				417766CF2D88A18100933571 /* HomeView.swift in Sources */,
 				417808902D95F3EA0004B28F /* AuthViewModel.swift in Sources */,
+				41A1B01A2D98B506005A9A78 /* AccountView.swift in Sources */,
 				417AA5FC2D889F0000ABB99F /* ContentView.swift in Sources */,
 				417766D12D88A20D00933571 /* ViewA.swift in Sources */,
 				417AA5FA2D889F0000ABB99F /* spotchurchappApp.swift in Sources */,
