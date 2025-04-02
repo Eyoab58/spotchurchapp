@@ -10,43 +10,90 @@ import FirebaseAuth
 
 struct ConfessionView: View {
     @State private var isUserLoggedIn = Auth.auth().currentUser != nil
+    @State private var showAuthView = false
+    @StateObject private var auth = AuthViewModel()
+
+    let day: Date
+    @Binding var isSelected: Bool
+
+    @State private var selectedDate: Date?
+    @State private var showTimePickerPage = false
 
     var body: some View {
-        VStack {
-            if isUserLoggedIn {
-                // User is logged in — show your main content
-                Text("Welcome to the Confession section!")
-                    .font(.title)
-                    .padding()
-            } else {
-                // User not logged in — show prompt
-                VStack(spacing: 16) {
-                    Text("You must be logged in to access this section.")
-                        .font(.headline)
-                        .multilineTextAlignment(.center)
-                        .padding()
+        NavigationView {
+            VStack {
+                if isUserLoggedIn {
+                    VStack {
+                        Text("Choose a date for your confession")
+                            .font(.headline)
+                            .padding(.bottom)
 
-                    NavigationLink(destination: AuthView()) {
-                        Text("Log In or Create Account")
-                            .font(.subheadline)
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(Color.blue)
-                            .cornerRadius(10)
+                        CalendarMonthView(selectedDate: $selectedDate)
+
+                        Button("Continue") {
+                            showTimePickerPage = true
+                        }
+                        .disabled(selectedDate == nil)
+                        .padding()
+                        .background(selectedDate != nil ? Color.blue : Color.gray)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+
+                        NavigationLink(
+                            destination: selectedDate.map { date in
+                                TimeSlotPickerPage(
+                                    selectedDate: date,
+                                    isShowing: $showTimePickerPage
+                                )
+                            },
+                            isActive: $showTimePickerPage
+                        ) {
+                            EmptyView()
+                        }
+
                     }
+                    .padding()
+                } else {
+                    VStack(spacing: 16) {
+                        Text("You must be logged in to access this section.")
+                            .font(.headline)
+                            .multilineTextAlignment(.center)
+                            .padding()
+
+                        Button("Log In or Create Account") {
+                            showAuthView = true
+                        }
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.blue)
+                        .cornerRadius(10)
+
+                        NavigationLink(
+                            destination: AuthView(auth: auth, onLoginSuccess: {
+                                isUserLoggedIn = true
+                                showAuthView = false
+                            }),
+                            isActive: $showAuthView
+                        ) {
+                            EmptyView()
+                        }
+                    }
+                    .padding()
                 }
-                .padding()
             }
-        }
-        .onAppear {
-            // Keep checking on view appear in case they log in elsewhere
-            isUserLoggedIn = Auth.auth().currentUser != nil
+            .navigationTitle("Confession")
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                    isUserLoggedIn = Auth.auth().currentUser != nil
+                }
+            }
         }
     }
 }
 
 struct ConfessionView_Previews: PreviewProvider {
     static var previews: some View {
-        ConfessionView()
+        ConfessionView(day: Date(), isSelected: .constant(false))
     }
 }
+

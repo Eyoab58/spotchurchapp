@@ -58,7 +58,6 @@ struct HomeView: View {
                     }
                 }
             }
-            .navigationTitle("Home")
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarItems(trailing:
                 Button(action: {
