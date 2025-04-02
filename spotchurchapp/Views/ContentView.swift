@@ -27,7 +27,7 @@ struct ContentView: View {
                 }
             
         
-            ConfessionView()
+            ConfessionView(day: Date(), isSelected: .constant(false))
                 .tabItem() {
                     Image(systemName: "doc.fill")
                     Text("Confession")
