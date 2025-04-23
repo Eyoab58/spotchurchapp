@@ -9,6 +9,9 @@ import SwiftUI
 import WebKit
 import FirebaseAuth
 
+import SwiftUI
+import WebKit
+import FirebaseAuth
 
 struct YoutubePlayerView: UIViewRepresentable {
     let videoId: String
@@ -26,7 +29,6 @@ struct YoutubePlayerView: UIViewRepresentable {
             print("Invalid YouTube URL")
             return
         }
-
         let request = URLRequest(url: url)
         uiView.load(request)
     }
@@ -34,6 +36,7 @@ struct YoutubePlayerView: UIViewRepresentable {
 
 struct HomeView: View {
     @ObservedObject var auth: AuthViewModel
+    @ObservedObject var youtubeService = YouTubeVideoService()
     @State private var navigate = false
 
     var body: some View {
@@ -49,10 +52,25 @@ struct HomeView: View {
                         .frame(width: 150, height: 110)
                         .padding(.top, 10)
 
-                    FeaturedVideoCard()
+                    ScrollView {
+                        if youtubeService.videos.isEmpty {
+                            Text("Loading videos...")
+                                .foregroundColor(.white)
+                                .padding()
+                        } else {
+                            VStack(spacing: 16) {
+                                ForEach(Array(youtubeService.videos.enumerated()), id: \.element.id) { index, video in
+                                    VideoCardView(video: video, isFeatured: index == 0)
+                                }
+
+                            }
+                            .padding()
+                        }
+                    }
+
+
                     Spacer()
 
-                    // 🔁 Dynamic NavigationLink
                     NavigationLink(destination: destinationView(), isActive: $navigate) {
                         EmptyView()
                     }
@@ -68,8 +86,8 @@ struct HomeView: View {
                 }
             )
             .onAppear {
-                // Refresh auth state on view appear
                 auth.user = Auth.auth().currentUser
+                youtubeService.fetchVideos()
             }
         }
     }
@@ -84,17 +102,28 @@ struct HomeView: View {
     }
 }
 
-// FEATURED VIDEO CARD COMPONENT
-struct FeaturedVideoCard: View {
+struct VideoCardView: View {
+    let video: YouTubeVideo
+    let isFeatured: Bool // ✅ Add this
     @State private var showVideo = false
-
     var body: some View {
         VStack(alignment: .leading) {
             ZStack(alignment: .topTrailing) {
-                Image("RTD") // Replace with your asset name
-                    .resizable()
-                    .scaledToFit()
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                if let url = URL(string: video.thumbnailURL),
+                   let data = try? Data(contentsOf: url),
+                   let uiImage = UIImage(data: data) {
+                    Image(uiImage: uiImage)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 200)
+                        .clipped()
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                } else {
+                    Color.gray
+                        .frame(height: 200)
+                        .cornerRadius(10)
+                }
 
                 Text("FEATURED")
                     .font(.caption)
@@ -107,21 +136,20 @@ struct FeaturedVideoCard: View {
             }
 
             VStack(alignment: .leading, spacing: 8) {
-                Text("Enemies to Our Christian Walk: Intrigues of the Devil")
+                Text(video.title)
                     .font(.headline)
                     .foregroundColor(.black)
 
                 HStack {
-                    // Button to show video player
                     Button(action: {
-                        showVideo = true // ✅ Open modal
+                        showVideo = true
                     }) {
                         Image(systemName: "play.circle.fill")
                             .font(.title)
                     }
                     .buttonStyle(PlainButtonStyle())
-                    .sheet(isPresented: $showVideo) { // ✅ Show video in a modal
-                        YoutubePlayerView(videoId: "n2NZSB7PFAs")
+                    .sheet(isPresented: $showVideo) {
+                        YoutubePlayerView(videoId: video.id)
                             .frame(height: 300)
                             .cornerRadius(10)
                             .shadow(radius: 5)
@@ -131,20 +159,17 @@ struct FeaturedVideoCard: View {
                     Spacer()
 
                     Button(action: {
-                        let url = URL(string: "https://www.youtube.com/watch?v=n2NZSB7PFAs")!
-                        let activityVC = UIActivityViewController(activityItems: [url], applicationActivities: nil)
-                        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-                           let rootVC = windowScene.windows.first?.rootViewController {
-                            rootVC.present(activityVC, animated: true, completion: nil)
+                        if let url = URL(string: "https://www.youtube.com/watch?v=\(video.id)") {
+                            let activityVC = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+                            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                               let rootVC = windowScene.windows.first?.rootViewController {
+                                rootVC.present(activityVC, animated: true, completion: nil)
+                            }
                         }
                     }) {
                         Image(systemName: "square.and.arrow.up")
                     }
                     .buttonStyle(PlainButtonStyle())
-
-                    Text("5d")
-                        .font(.caption)
-                        .foregroundColor(.gray)
                 }
             }
             .padding()
@@ -156,9 +181,10 @@ struct FeaturedVideoCard: View {
     }
 }
 
-// PREVIEWS
+
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView(auth: AuthViewModel())
     }
 }
+ 
