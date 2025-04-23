@@ -21,64 +21,69 @@ struct ConfessionView: View {
 
     var body: some View {
         NavigationView {
-            VStack {
-                if isUserLoggedIn {
-                    VStack {
-                        Text("Choose a date for your confession")
-                            .font(.headline)
-                            .padding(.bottom)
+            ZStack {
+                // 🌟 Match HomeView background color
+                Color(red: 0xDE / 255.0, green: 0xC3 / 255.0, blue: 0x8E / 255.0)
+                    .ignoresSafeArea()
 
-                        CalendarMonthView(selectedDate: $selectedDate)
+                VStack {
+                    if isUserLoggedIn {
+                        VStack {
+                            Text("Choose a date for your confession")
+                                .font(.headline)
+                                .padding(.bottom)
 
-                        Button("Continue") {
-                            showTimePickerPage = true
-                        }
-                        .disabled(selectedDate == nil)
-                        .padding()
-                        .background(selectedDate != nil ? Color.blue : Color.gray)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
+                            CalendarMonthView(selectedDate: $selectedDate)
 
-                        NavigationLink(
-                            destination: selectedDate.map { date in
-                                TimeSlotPickerPage(
-                                    selectedDate: date,
-                                    isShowing: $showTimePickerPage
-                                )
-                            },
-                            isActive: $showTimePickerPage
-                        ) {
-                            EmptyView()
-                        }
-
-                    }
-                    .padding()
-                } else {
-                    VStack(spacing: 16) {
-                        Text("You must be logged in to access this section.")
-                            .font(.headline)
-                            .multilineTextAlignment(.center)
+                            Button("Continue") {
+                                showTimePickerPage = true
+                            }
+                            .disabled(selectedDate == nil)
                             .padding()
+                            .background(selectedDate != nil ? Color.blue : Color.gray)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
 
-                        Button("Log In or Create Account") {
-                            showAuthView = true
+                            NavigationLink(
+                                destination: selectedDate.map { date in
+                                    TimeSlotPickerPage(
+                                        selectedDate: date,
+                                        isShowing: $showTimePickerPage
+                                    )
+                                },
+                                isActive: $showTimePickerPage
+                            ) {
+                                EmptyView()
+                            }
                         }
-                        .foregroundColor(.white)
                         .padding()
-                        .background(Color.blue)
-                        .cornerRadius(10)
+                    } else {
+                        VStack(spacing: 16) {
+                            Text("You must be logged in to access this section.")
+                                .font(.headline)
+                                .multilineTextAlignment(.center)
+                                .padding()
 
-                        NavigationLink(
-                            destination: AuthView(auth: auth, onLoginSuccess: {
-                                isUserLoggedIn = true
-                                showAuthView = false
-                            }),
-                            isActive: $showAuthView
-                        ) {
-                            EmptyView()
+                            Button("Log In or Create Account") {
+                                showAuthView = true
+                            }
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Color.blue)
+                            .cornerRadius(10)
+
+                            NavigationLink(
+                                destination: AuthView(auth: auth, onLoginSuccess: {
+                                    isUserLoggedIn = true
+                                    showAuthView = false
+                                }),
+                                isActive: $showAuthView
+                            ) {
+                                EmptyView()
+                            }
                         }
+                        .padding()
                     }
-                    .padding()
                 }
             }
             .navigationTitle("Confession")

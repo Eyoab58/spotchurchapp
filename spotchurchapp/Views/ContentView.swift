@@ -17,21 +17,23 @@ struct ContentView: View {
             HomeView(auth: AuthViewModel())
                 .tabItem() {
                     Image(systemName: "house.fill")
-                    Text("Contacts")
+                    Text("Home")
                 }
             
-            ViewA()
-                .tabItem() {
-                    Image(systemName: "phone")
-                    Text("Calls")
-                }
             
-        
             ConfessionView(day: Date(), isSelected: .constant(false))
                 .tabItem() {
                     Image(systemName: "doc.fill")
                     Text("Confession")
                 }
+            
+            
+            ResourcesView()
+                .tabItem() {
+                    Image(systemName: "book")
+                    Text("Resources")
+                }
+            
         }
     }
 }
