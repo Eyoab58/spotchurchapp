@@ -42,8 +42,11 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color(red: 0xDE / 255.0, green: 0xC3 / 255.0, blue: 0x8E / 255.0)
+                Image("background")
+                    .resizable()
+                    .scaledToFill()
                     .ignoresSafeArea()
+
 
                 VStack {
                     Image("SpotLogo")
@@ -67,10 +70,7 @@ struct HomeView: View {
                             .padding()
                         }
                     }
-
-
                     Spacer()
-
                     NavigationLink(destination: destinationView(), isActive: $navigate) {
                         EmptyView()
                     }
@@ -104,82 +104,92 @@ struct HomeView: View {
 
 struct VideoCardView: View {
     let video: YouTubeVideo
-    let isFeatured: Bool // ✅ Add this
+    let isFeatured: Bool
     @State private var showVideo = false
+
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 8) {
             ZStack(alignment: .topTrailing) {
+                // Thumbnail Image
                 if let url = URL(string: video.thumbnailURL),
                    let data = try? Data(contentsOf: url),
                    let uiImage = UIImage(data: data) {
                     Image(uiImage: uiImage)
                         .resizable()
-                        .scaledToFill()
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 200)
+                        .aspectRatio(16/9, contentMode: .fill)
+                        .frame(height: 180)
                         .clipped()
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .cornerRadius(12)
                 } else {
                     Color.gray
-                        .frame(height: 200)
+                        .frame(height: 180)
+                        .cornerRadius(12)
+                }
+
+                if isFeatured {
+                    Text("FEATURED")
+                        .font(.caption)
+                        .bold()
+                        .foregroundColor(.white)
+                        .padding(6)
+                        .background(Color.black.opacity(0.7))
+                        .cornerRadius(5)
+                        .padding([.top, .trailing], 8)
+                }
+            }
+
+            // Video Title
+            Text(video.title)
+                .font(.headline)
+                .foregroundColor(.primary)
+                .padding(.horizontal, 8)
+
+            // Action Buttons (Play & Share)
+            HStack {
+                Button(action: {
+                    showVideo = true
+                }) {
+                    Image(systemName: "play.circle.fill")
+                        .font(.title2)
+                        .foregroundColor(.blue)
+                }
+                .buttonStyle(PlainButtonStyle())
+                .sheet(isPresented: $showVideo) {
+                    YoutubePlayerView(videoId: video.id)
+                        .frame(height: 300)
                         .cornerRadius(10)
+                        .shadow(radius: 5)
+                        .padding()
                 }
 
-                Text("FEATURED")
-                    .font(.caption)
-                    .bold()
-                    .foregroundColor(.white)
-                    .padding(8)
-                    .background(Color.black.opacity(0.7))
-                    .cornerRadius(5)
-                    .padding([.top, .trailing], 10)
-            }
+                Spacer()
 
-            VStack(alignment: .leading, spacing: 8) {
-                Text(video.title)
-                    .font(.headline)
-                    .foregroundColor(.black)
-
-                HStack {
-                    Button(action: {
-                        showVideo = true
-                    }) {
-                        Image(systemName: "play.circle.fill")
-                            .font(.title)
-                    }
-                    .buttonStyle(PlainButtonStyle())
-                    .sheet(isPresented: $showVideo) {
-                        YoutubePlayerView(videoId: video.id)
-                            .frame(height: 300)
-                            .cornerRadius(10)
-                            .shadow(radius: 5)
-                            .padding()
-                    }
-
-                    Spacer()
-
-                    Button(action: {
-                        if let url = URL(string: "https://www.youtube.com/watch?v=\(video.id)") {
-                            let activityVC = UIActivityViewController(activityItems: [url], applicationActivities: nil)
-                            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-                               let rootVC = windowScene.windows.first?.rootViewController {
-                                rootVC.present(activityVC, animated: true, completion: nil)
-                            }
+                Button(action: {
+                    if let url = URL(string: "https://www.youtube.com/watch?v=\(video.id)") {
+                        let activityVC = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+                        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                           let rootVC = windowScene.windows.first?.rootViewController {
+                            rootVC.present(activityVC, animated: true, completion: nil)
                         }
-                    }) {
-                        Image(systemName: "square.and.arrow.up")
                     }
-                    .buttonStyle(PlainButtonStyle())
+                }) {
+                    Image(systemName: "square.and.arrow.up")
+                        .foregroundColor(.gray)
                 }
+                .buttonStyle(PlainButtonStyle())
             }
-            .padding()
+            .padding(.horizontal, 8)
+            .padding(.bottom, 8)
         }
+        .frame(maxWidth: 350)
         .background(Color.white)
         .cornerRadius(12)
-        .shadow(radius: 5)
-        .padding()
+        .shadow(radius: 4)
+        .padding(.horizontal)
+        .padding(.top, 8)
     }
 }
+
 
 
 struct HomeView_Previews: PreviewProvider {

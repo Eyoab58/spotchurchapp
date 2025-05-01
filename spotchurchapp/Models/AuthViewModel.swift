@@ -22,20 +22,34 @@ class AuthViewModel: ObservableObject {
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
             if let user = result?.user, error == nil {
                 let uid = user.uid
-                let userData: [String: Any] = [
-                    "firstName": firstName,
-                    "lastName": lastName,
-                    "email": email,
-                    "createdAt": Timestamp()
-                ]
+                let displayName = "\(firstName) \(lastName)"  // 🔥 Full name
 
-                // Save to Firestore
-                self.db.collection("users").document(uid).setData(userData) { firestoreError in
-                    DispatchQueue.main.async {
-                        self.user = user
-                        completion(firestoreError)
+                let changeRequest = user.createProfileChangeRequest()
+                changeRequest.displayName = displayName
+                changeRequest.commitChanges { commitError in
+                    if let commitError = commitError {
+                        DispatchQueue.main.async {
+                            completion(commitError)
+                        }
+                        return
+                    }
+
+                    // Save to Firestore
+                    let userData: [String: Any] = [
+                        "firstName": firstName,
+                        "lastName": lastName,
+                        "email": email,
+                        "createdAt": Timestamp()
+                    ]
+
+                    self.db.collection("users").document(uid).setData(userData) { firestoreError in
+                        DispatchQueue.main.async {
+                            self.user = user
+                            completion(firestoreError)
+                        }
                     }
                 }
+
             } else {
                 DispatchQueue.main.async {
                     completion(error)

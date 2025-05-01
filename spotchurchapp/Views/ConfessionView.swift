@@ -12,6 +12,7 @@ struct ConfessionView: View {
     @State private var isUserLoggedIn = Auth.auth().currentUser != nil
     @State private var showAuthView = false
     @StateObject private var auth = AuthViewModel()
+    @StateObject private var appointmentVM = AppointmentViewModel()
 
     let day: Date
     @Binding var isSelected: Bool
@@ -22,19 +23,18 @@ struct ConfessionView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                // 🌟 Match HomeView background color
                 Color(red: 0xDE / 255.0, green: 0xC3 / 255.0, blue: 0x8E / 255.0)
                     .ignoresSafeArea()
-
+                
                 VStack {
                     if isUserLoggedIn {
                         VStack {
                             Text("Choose a date for your confession")
                                 .font(.headline)
                                 .padding(.bottom)
-
+                            
                             CalendarMonthView(selectedDate: $selectedDate)
-
+                            
                             Button("Continue") {
                                 showTimePickerPage = true
                             }
@@ -43,11 +43,12 @@ struct ConfessionView: View {
                             .background(selectedDate != nil ? Color.blue : Color.gray)
                             .foregroundColor(.white)
                             .cornerRadius(10)
-
+                            
                             NavigationLink(
                                 destination: selectedDate.map { date in
                                     TimeSlotPickerPage(
-                                        selectedDate: date,
+                                        appointmentVM: appointmentVM,
+                                        selectedDate: date,              // Date (non-binding ✅)
                                         isShowing: $showTimePickerPage
                                     )
                                 },
@@ -63,7 +64,7 @@ struct ConfessionView: View {
                                 .font(.headline)
                                 .multilineTextAlignment(.center)
                                 .padding()
-
+                            
                             Button("Log In or Create Account") {
                                 showAuthView = true
                             }
@@ -71,7 +72,7 @@ struct ConfessionView: View {
                             .padding()
                             .background(Color.blue)
                             .cornerRadius(10)
-
+                            
                             NavigationLink(
                                 destination: AuthView(auth: auth, onLoginSuccess: {
                                     isUserLoggedIn = true
@@ -91,14 +92,10 @@ struct ConfessionView: View {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                     isUserLoggedIn = Auth.auth().currentUser != nil
                 }
+                if let selectedDate = selectedDate {
+                    appointmentVM.fetchAppointments(for: selectedDate)
+                }
             }
         }
     }
 }
-
-struct ConfessionView_Previews: PreviewProvider {
-    static var previews: some View {
-        ConfessionView(day: Date(), isSelected: .constant(false))
-    }
-}
-
