@@ -23,7 +23,9 @@ struct ConfessionView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color(red: 0xDE / 255.0, green: 0xC3 / 255.0, blue: 0x8E / 255.0)
+                Image("chatGPT")
+                    .resizable()
+                    .scaledToFill()
                     .ignoresSafeArea()
                 
                 VStack {

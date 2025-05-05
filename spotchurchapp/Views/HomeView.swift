@@ -42,11 +42,12 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Image("background")
+                Image("chatGPT")
                     .resizable()
                     .scaledToFill()
                     .ignoresSafeArea()
 
+//                Color(red: 0xDE / 255.0, green: 0xC3 / 255.0, blue: 0x8E / 255.0)
 
                 VStack {
                     Image("SpotLogo")
