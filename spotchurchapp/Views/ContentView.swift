@@ -8,34 +8,51 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var isVideoFinished = false
+    @State private var showMainApp = false
 
     var body: some View {
-//        if isVideoFinished {
-            // 🔥 Show TabView only after video finishes
-            TabView {
-                HomeView(auth: AuthViewModel())
-                    .tabItem {
-                        Image(systemName: "house.fill")
-                        Text("Home")
-                    }
-
-                ConfessionView(day: Date(), isSelected: .constant(false))
-                    .tabItem {
-                        Image(systemName: "doc.fill")
-                        Text("Confession")
-                    }
-
-                ResourcesView()
-                    .tabItem {
-                        Image(systemName: "book")
-                        Text("Resources")
-                    }
+        ZStack {
+            if showMainApp {
+                TabView {
+                    HomeView(auth: AuthViewModel())
+                        .tabItem {
+                            Image(systemName: "house.fill")
+                            Text("Home")
+                        }
+                    ConfessionView(day: Date(), isSelected: .constant(false))
+                        .tabItem {
+                            Image(systemName: "doc.fill")
+                            Text("Confession")
+                        }
+                    ResourcesView()
+                        .tabItem {
+                            Image(systemName: "book")
+                            Text("Resources")
+                        }
+                }
+                .transition(.opacity)
             }
-//        } else {
-//            LaunchVideoView(isVideoFinished: $isVideoFinished)
-//        }
+
+            if !isVideoFinished {
+                LaunchVideoView(isVideoFinished: $isVideoFinished)
+                    .transition(.opacity)
+            }
+        }
+        .animation(.easeInOut(duration: 1.0), value: showMainApp)
+        .onChange(of: isVideoFinished) { finished in
+            if finished {
+                // Delay transition slightly if you want to smooth things out
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    withAnimation {
+                        showMainApp = true
+                    }
+                }
+            }
+        }
     }
 }
+
+
 
 
 struct ContentView_Previews: PreviewProvider {
