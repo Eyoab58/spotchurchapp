@@ -57,6 +57,8 @@ struct HomeView: View {
                         .padding(.top, 10)
 
                     ScrollView {
+
+                        
                         if youtubeService.videos.isEmpty {
                             Text("Loading videos...")
                                 .foregroundColor(.white)

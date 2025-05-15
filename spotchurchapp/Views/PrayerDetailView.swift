@@ -12,14 +12,29 @@ struct PrayerDetailView: View {
 
     var body: some View {
         ScrollView {
-            Text(text)
-                .font(.body)
-                .foregroundColor(.primary)
-                .padding()
+            ZStack(alignment: .top) {
+                // Background Image
+                Image("chatGPT")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(maxWidth: .infinity)
+                    .ignoresSafeArea()
+                
+                VStack(alignment: .leading, spacing: 16) {
+                    Text(text)
+                        .font(.body)
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.black.opacity(0.5)) // Optional: improves readability
+                        .cornerRadius(10)
+                        .padding()
+                    
+                    Spacer()
+                }
+            }
         }
         .navigationTitle("Prayer")
         .navigationBarTitleDisplayMode(.inline)
-        .background(Color(UIColor.systemGroupedBackground).ignoresSafeArea())
     }
 }
 

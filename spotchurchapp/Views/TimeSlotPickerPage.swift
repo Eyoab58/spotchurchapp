@@ -19,17 +19,6 @@ struct TimeSlotPickerPage: View {
     
     var body: some View {
         VStack {
-            HStack {
-                Button(action: {
-                    isShowing = false  // Back button
-                }) {
-                    Image(systemName: "chevron.left")
-                        .font(.title3)
-                    Text("Back")
-                }
-                .padding()
-                Spacer()
-            }
             
             Text("Available times on \(formatted(selectedDate))")
                 .font(.title2)

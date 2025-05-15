@@ -20,94 +20,104 @@ struct CalendarMonthView: View {
         return formatter.string(from: currentDate)
     }
 
-    // MARK: - Weekday symbols (Sun - Sat)
+    // MARK: - Weekday symbols (Fri, Sat, Sun)
     private var weekdaySymbols: [String] {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en_US_POSIX")
-        return formatter.shortWeekdaySymbols // ["Sun", "Mon", ..., "Sat"]
+        guard let allDays = formatter.shortWeekdaySymbols else { return ["Fri", "Sat", "Sun"] }
+        return [allDays[5], allDays[6], allDays[0]] // ["Fri", "Sat", "Sun"]
     }
 
-    // MARK: - Main date grid with nils for blank days
-    private var datesInMonth: [Date?] {
+    // MARK: - Dates in current month for Fri/Sat/Sun
+    private var weekendDatesInMonth: [Date] {
         guard let range = calendar.range(of: .day, in: .month, for: currentDate),
-              let startOfMonth = calendar.date(from: calendar.dateComponents([.year, .month], from: currentDate)),
-              let firstDay = calendar.date(bySetting: .day, value: 1, of: startOfMonth)
+              let startOfMonth = calendar.date(from: calendar.dateComponents([.year, .month], from: currentDate))
         else { return [] }
 
-        let firstWeekday = calendar.component(.weekday, from: firstDay) // 1 = Sunday
-
-        let leadingEmptyDays: [Date?] = Array(repeating: nil, count: firstWeekday - 1)
-
-        let actualDates: [Date?] = range.compactMap { day in
-            calendar.date(byAdding: .day, value: day - 1, to: startOfMonth)
+        return range.compactMap { day in
+            if let date = calendar.date(byAdding: .day, value: day - 1, to: startOfMonth) {
+                let weekday = calendar.component(.weekday, from: date)
+                return (weekday == 6 || weekday == 7 || weekday == 1) ? date : nil
+            }
+            return nil
         }
+    }
 
-        return leadingEmptyDays + actualDates
+    // MARK: - Group dates by weekday (6 = Fri, 7 = Sat, 1 = Sun)
+    private var groupedWeekendDates: [Int: [Date]] {
+        Dictionary(grouping: weekendDatesInMonth) {
+            calendar.component(.weekday, from: $0)
+        }
+    }
+
+    // MARK: - Helper: Convert weekday number to name
+    private func weekdayName(for weekday: Int) -> String {
+        switch weekday {
+        case 6: return "Friday"
+        case 7: return "Saturday"
+        case 1: return "Sunday"
+        default: return ""
+        }
     }
 
     // MARK: - Body
     var body: some View {
-        VStack(spacing: 12) {
+        VStack(spacing: 16) {
             // ✅ Month label
             Text(currentMonthYear)
                 .font(.title3)
                 .fontWeight(.medium)
-                .padding(.bottom, 4)
 
             // ✅ Legend
-            HStack {
-                HStack(spacing: 4) {
-                    Circle().fill(Color.blue).frame(width: 10, height: 10)
-                    Text("Virtual (Weekdays)")
-                }
-                Spacer()
-                HStack(spacing: 4) {
-                    Circle().fill(Color.green).frame(width: 10, height: 10)
-                    Text("In-person (Sat & Sun)")
-                }
+            HStack(spacing: 4) {
+                Circle().fill(Color.blue).frame(width: 10, height: 10)
+                Text("Virtual (Fridays)")
             }
+            HStack(spacing: 4) {
+                Circle().fill(Color.green).frame(width: 10, height: 10)
+                Text("In-person (Sat & Sun)")
+            }
+                Spacer()
+            
             .font(.caption)
             .padding(.horizontal)
 
-            // ✅ Weekday headers
-            LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 7)) {
-                ForEach(weekdaySymbols, id: \.self) { day in
-                    Text(day)
-                        .font(.caption)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.gray)
-                }
-            }
+            // ✅ Day groupings
+            VStack(alignment: .leading, spacing: 16) {
+                ForEach([6, 7, 1], id: \.self) { weekday in
+                    if let dates = groupedWeekendDates[weekday] {
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text(weekdayName(for: weekday))
+                                .font(.headline)
 
-            // ✅ Calendar grid with correct weekday offset
-            LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 7), spacing: 12) {
-                ForEach(datesInMonth.indices, id: \.self) { index in
-                    if let date = datesInMonth[index] {
-                        let weekday = calendar.component(.weekday, from: date)
-                        let isWeekend = weekday == 1 || weekday == 7
-                        let bgColor = isWeekend ? Color.green : Color.blue
-                        let isSelected = selectedDate == date
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack(spacing: 12) {
+                                    ForEach(dates, id: \.self) { date in
+                                        let weekday = calendar.component(.weekday, from: date)
+                                        let bgColor: Color = (weekday == 6) ? Color.blue : Color.green
+                                        let isSelected = selectedDate == date
 
-                        Text("\(calendar.component(.day, from: date))")
-                            .frame(width: 40, height: 40)
-                            .background(isSelected ? bgColor : Color.clear)
-                            .foregroundColor(isSelected ? .white : .primary)
-                            .overlay(
-                                Circle().stroke(bgColor, lineWidth: isSelected ? 0 : 2)
-                            )
-                            .clipShape(Circle())
-                            .onTapGesture {
-                                selectedDate = date
+                                        Text("\(calendar.component(.day, from: date))")
+                                            .frame(width: 40, height: 40)
+                                            .background(isSelected ? bgColor : Color.clear)
+                                            .foregroundColor(isSelected ? .white : .primary)
+                                            .overlay(
+                                                Circle().stroke(bgColor, lineWidth: isSelected ? 0 : 2)
+                                            )
+                                            .clipShape(Circle())
+                                            .onTapGesture {
+                                                selectedDate = date
+                                            }
+                                    }
+                                }
                             }
-                    } else {
-                        // Empty cell for offset before the 1st
-                        Text("")
-                            .frame(width: 40, height: 40)
+                        }
                     }
                 }
             }
+            .padding(.horizontal)
         }
-        .padding(.horizontal)
+        .padding(.vertical)
     }
 }
 
