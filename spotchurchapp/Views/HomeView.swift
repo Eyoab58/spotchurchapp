@@ -47,8 +47,6 @@ struct HomeView: View {
                     .scaledToFill()
                     .ignoresSafeArea()
 
-//                Color(red: 0xDE / 255.0, green: 0xC3 / 255.0, blue: 0x8E / 255.0)
-
                 VStack {
                     Image("SpotLogo")
                         .resizable()
@@ -57,7 +55,7 @@ struct HomeView: View {
                         .padding(.top, 10)
 
                     ScrollView {
-
+                        
                         
                         if youtubeService.videos.isEmpty {
                             Text("Loading videos...")
@@ -68,11 +66,22 @@ struct HomeView: View {
                                 ForEach(Array(youtubeService.videos.enumerated()), id: \.element.id) { index, video in
                                     VideoCardView(video: video, isFeatured: index == 0)
                                 }
-
+                                
                             }
                             .padding()
                         }
                     }
+                        
+                    .onAppear {
+                        Task {
+                            print("Calling fetchVideos()")
+                            auth.user = Auth.auth().currentUser
+                            await youtubeService.fetchVideos()
+                        }
+                    }
+
+
+
                     Spacer()
                     NavigationLink(destination: destinationView(), isActive: $navigate) {
                         EmptyView()
@@ -88,10 +97,6 @@ struct HomeView: View {
                         .font(.title2)
                 }
             )
-            .onAppear {
-                auth.user = Auth.auth().currentUser
-                youtubeService.fetchVideos()
-            }
         }
     }
 
@@ -113,22 +118,8 @@ struct VideoCardView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             ZStack(alignment: .topTrailing) {
-                // Thumbnail Image
-                if let url = URL(string: video.thumbnailURL),
-                   let data = try? Data(contentsOf: url),
-                   let uiImage = UIImage(data: data) {
-                    Image(uiImage: uiImage)
-                        .resizable()
-                        .aspectRatio(16/9, contentMode: .fill)
-                        .frame(height: 180)
-                        .clipped()
-                        .cornerRadius(12)
-                } else {
-                    Color.gray
-                        .frame(height: 180)
-                        .cornerRadius(12)
-                }
-
+                RemoteImageView(urlString: video.thumbnailURL)
+                
                 if isFeatured {
                     Text("FEATURED")
                         .font(.caption)
@@ -140,14 +131,14 @@ struct VideoCardView: View {
                         .padding([.top, .trailing], 8)
                 }
             }
-
-            // Video Title
+            
             Text(video.title)
                 .font(.headline)
                 .foregroundColor(.primary)
                 .padding(.horizontal, 8)
-
-            // Action Buttons (Play & Share)
+        
+            
+            
             HStack {
                 Button(action: {
                     showVideo = true

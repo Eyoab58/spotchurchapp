@@ -1,6 +1,0 @@
-framework module Pods_spotchurchappTests {
-  umbrella header "Pods-spotchurchappTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -12,7 +12,7 @@ struct LaunchVideoView: View {
     @Binding var isVideoFinished: Bool  // Used to switch to main content
 
     var body: some View {
-        LaunchVideoPlayerView(videoName: "launchAnimation", videoExtension: "mp4") {
+        LaunchVideoPlayerView(videoName: "launchAnimation", videoExtension: "mov") {
             isVideoFinished = true
         }
         .ignoresSafeArea()
