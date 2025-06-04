@@ -24,10 +24,10 @@ struct ContentView: View {
                             Image(systemName: "doc.fill")
                             Text("Confession")
                         }
-                    CalendarView()
+                    EngageView(auth: AuthViewModel())
                         .tabItem{
-                            Image(systemName: "calendar")
-                            Text("Calendar")
+                            Image(systemName: "person.2.circle")
+                            Text("Engage")
                         }
                     ResourcesView()
                         .tabItem {
@@ -46,7 +46,6 @@ struct ContentView: View {
         .animation(.easeInOut(duration: 1.0), value: showMainApp)
         .onChange(of: isVideoFinished) { finished in
             if finished {
-                // Delay transition slightly if you want to smooth things out
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                     withAnimation {
                         showMainApp = true

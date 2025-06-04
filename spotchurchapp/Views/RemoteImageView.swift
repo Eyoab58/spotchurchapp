@@ -11,10 +11,10 @@ struct RemoteImageView: View {
             if let uiImage = uiImage {
                 Image(uiImage: uiImage)
                     .resizable()
-                    .scaledToFill() // 🔥 Ensures no black bars
+                    .scaledToFill()
                     .frame(height: 180)
                     .frame(maxWidth: .infinity)
-                    .clipped() // 🔥 Cuts off any overflow to fit the frame
+                    .clipped()
             } else if isLoading {
                 ProgressView()
                     .frame(height: 180)

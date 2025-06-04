@@ -17,24 +17,42 @@ struct YoutubePlayerView: UIViewRepresentable {
     let videoId: String
 
     func makeUIView(context: Context) -> WKWebView {
-        let webView = WKWebView()
-        webView.configuration.allowsInlineMediaPlayback = true
-        webView.configuration.mediaTypesRequiringUserActionForPlayback = []
+        let configuration = makeViewConfiguration()
+        let webView = WKWebView(frame: .zero, configuration: configuration)
+        webView.scrollView.isScrollEnabled = false
+        webView.backgroundColor = .clear
+        webView.isOpaque = false
         return webView
     }
 
     func updateUIView(_ uiView: WKWebView, context: Context) {
         let embedURLString = "https://www.youtube.com/embed/\(videoId)?playsinline=1"
         guard let url = URL(string: embedURLString) else {
-            print("Invalid YouTube URL")
+            print(" Invalid YouTube URL")
             return
         }
-        let request = URLRequest(url: url)
-        uiView.load(request)
+        uiView.load(URLRequest(url: url))
+    }
+
+    private func makeViewConfiguration() -> WKWebViewConfiguration {
+        let configuration = WKWebViewConfiguration()
+        configuration.allowsInlineMediaPlayback = true
+        configuration.mediaTypesRequiringUserActionForPlayback = []
+
+        //  Optional: Inject custom JavaScript
+        let dropSharedWorkersScript = WKUserScript(
+            source: "delete window.SharedWorker;",
+            injectionTime: .atDocumentStart,
+            forMainFrameOnly: false
+        )
+        configuration.userContentController.addUserScript(dropSharedWorkersScript)
+
+        return configuration
     }
 }
 
 struct HomeView: View {
+    @State private var selectedVideo: YouTubeVideo? = nil
     @ObservedObject var auth: AuthViewModel
     @ObservedObject var youtubeService = YouTubeVideoService()
     @State private var navigate = false
@@ -64,7 +82,10 @@ struct HomeView: View {
                         } else {
                             VStack(spacing: 16) {
                                 ForEach(Array(youtubeService.videos.enumerated()), id: \.element.id) { index, video in
-                                    VideoCardView(video: video, isFeatured: index == 0)
+                                    VideoCardView(video: video, isFeatured: index == 0) { selected in
+                                        selectedVideo = selected
+                                    }
+
                                 }
                                 
                             }
@@ -86,7 +107,15 @@ struct HomeView: View {
                     NavigationLink(destination: destinationView(), isActive: $navigate) {
                         EmptyView()
                     }
+                    
                 }
+            }
+            .sheet(item: $selectedVideo) { video in
+                YoutubePlayerView(videoId: video.id)
+                    .frame(height: 300)
+                    .cornerRadius(10)
+                    .shadow(radius: 5)
+                    .padding()
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarItems(trailing:
@@ -113,7 +142,8 @@ struct HomeView: View {
 struct VideoCardView: View {
     let video: YouTubeVideo
     let isFeatured: Bool
-    @State private var showVideo = false
+    let onPlay: (YouTubeVideo) -> Void
+
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -141,20 +171,16 @@ struct VideoCardView: View {
             
             HStack {
                 Button(action: {
-                    showVideo = true
+                    print("Play button tapped")
+                    onPlay(video)
                 }) {
                     Image(systemName: "play.circle.fill")
                         .font(.title2)
                         .foregroundColor(.blue)
                 }
                 .buttonStyle(PlainButtonStyle())
-                .sheet(isPresented: $showVideo) {
-                    YoutubePlayerView(videoId: video.id)
-                        .frame(height: 300)
-                        .cornerRadius(10)
-                        .shadow(radius: 5)
-                        .padding()
-                }
+
+
 
                 Spacer()
 

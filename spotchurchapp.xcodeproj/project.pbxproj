@@ -10,6 +10,8 @@
 		41000DF92DDAD53200A75C11 /* YoutubeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41000DF82DDAD53200A75C11 /* YoutubeModels.swift */; };
 		410078502DDF6C5000BAFBFA /* RemoteImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4100784F2DDF6C5000BAFBFA /* RemoteImageView.swift */; };
 		4151C53B2D9878A800B827B6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 419205E62D8DAF1700EA6D8F /* GoogleService-Info.plist */; };
+		415EFDA92DEE1CBD008D9899 /* EngageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415EFDA82DEE1CBD008D9899 /* EngageView.swift */; };
+		415EFDAB2DEE414D008D9899 /* BaptismView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415EFDAA2DEE414D008D9899 /* BaptismView.swift */; };
 		4168107A2DC9AF6900D52A82 /* LaunchVideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416810792DC9AF6900D52A82 /* LaunchVideoPlayerView.swift */; };
 		41689E2C2DD90CEB000AAA7C /* launchAnimation.mov in Resources */ = {isa = PBXBuildFile; fileRef = 41689E2B2DD90CEB000AAA7C /* launchAnimation.mov */; };
 		41689E2E2DD911E1000AAA7C /* CalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41689E2D2DD911E1000AAA7C /* CalendarEvent.swift */; };
@@ -67,6 +69,8 @@
 		41000DF82DDAD53200A75C11 /* YoutubeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeModels.swift; sourceTree = "<group>"; };
 		4100784D2DDC1CBF00BAFBFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4100784F2DDF6C5000BAFBFA /* RemoteImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageView.swift; sourceTree = "<group>"; };
+		415EFDA82DEE1CBD008D9899 /* EngageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngageView.swift; sourceTree = "<group>"; };
+		415EFDAA2DEE414D008D9899 /* BaptismView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaptismView.swift; sourceTree = "<group>"; };
 		416810792DC9AF6900D52A82 /* LaunchVideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchVideoPlayerView.swift; sourceTree = "<group>"; };
 		41689E2B2DD90CEB000AAA7C /* launchAnimation.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = launchAnimation.mov; sourceTree = "<group>"; };
 		41689E2D2DD911E1000AAA7C /* CalendarEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEvent.swift; sourceTree = "<group>"; };
@@ -136,9 +140,10 @@
 		417766CD2D88A12E00933571 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				417AA5FD2D889F0300ABB99F /* Assets.xcassets */,
+				417766CE2D88A18100933571 /* HomeView.swift */,
 				41689E2B2DD90CEB000AAA7C /* launchAnimation.mov */,
 				417AA5FB2D889F0000ABB99F /* ContentView.swift */,
-				417766CE2D88A18100933571 /* HomeView.swift */,
 				417766D02D88A20D00933571 /* ResourcesView.swift */,
 				417C863D2D88C67E00072F67 /* ConfessionView.swift */,
 				417808942D95F50E0004B28F /* AuthView.swift */,
@@ -148,9 +153,10 @@
 				418810972DB6A95A00D6DF6B /* PrayerDetailView.swift */,
 				41A449C82DBF7C6B0026B5FA /* LaunchVideoView.swift */,
 				4190B7352DCFA95E00A5841D /* CalendarView.swift */,
-				417AA5FD2D889F0300ABB99F /* Assets.xcassets */,
 				41689E2F2DD9122D000AAA7C /* EventListView.swift */,
 				4100784F2DDF6C5000BAFBFA /* RemoteImageView.swift */,
+				415EFDA82DEE1CBD008D9899 /* EngageView.swift */,
+				415EFDAA2DEE414D008D9899 /* BaptismView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -440,12 +446,14 @@
 				417808902D95F3EA0004B28F /* AuthViewModel.swift in Sources */,
 				41689E2E2DD911E1000AAA7C /* CalendarEvent.swift in Sources */,
 				4168107A2DC9AF6900D52A82 /* LaunchVideoPlayerView.swift in Sources */,
+				415EFDAB2DEE414D008D9899 /* BaptismView.swift in Sources */,
 				41A1B01A2D98B506005A9A78 /* AccountView.swift in Sources */,
 				410078502DDF6C5000BAFBFA /* RemoteImageView.swift in Sources */,
 				417AA5FC2D889F0000ABB99F /* ContentView.swift in Sources */,
 				419159B42D9CC7C400099E4C /* CalendarMonthView.swift in Sources */,
 				417766D12D88A20D00933571 /* ResourcesView.swift in Sources */,
 				417AA5FA2D889F0000ABB99F /* spotchurchappApp.swift in Sources */,
+				415EFDA92DEE1CBD008D9899 /* EngageView.swift in Sources */,
 				419248092DB937FB004C0020 /* LegacyAsyncImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -605,7 +613,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"spotchurchapp/Preview Content\"";
 				DEVELOPMENT_TEAM = N87LTNN8NL;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = spotchurchapp/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -643,7 +651,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"spotchurchapp/Preview Content\"";
 				DEVELOPMENT_TEAM = N87LTNN8NL;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = spotchurchapp/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
